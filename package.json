@@ -9,9 +9,6 @@
         "registry": "https://npm.pkg.github.com"
     },
     "scripts": {
-        "prereset": "rm -rf .git",
-        "reset": "git init",
-        "postreset": "npm i --save-dev husky",
         "prebuild": "rm -rf dist",
         "build": "tsc -p tsconfig.build.json",
         "build:release": "npm run package:release",
@@ -25,7 +22,10 @@
         "release": "npm run build:release",
         "postrelease": "npm run publish:release",
         "prepublish:release": "git push --follow-tags origin main",
-        "publish:release": "npm publish dist"
+        "publish:release": "npm publish dist",
+        "prereset": "rm -rf .git",
+        "reset": "git init",
+        "postreset": "npm i --save-dev husky"
     },
     "dependencies": {
         "@nestjs/mapped-types": "0.1.0"
