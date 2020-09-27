@@ -9,7 +9,9 @@
         "registry": "https://npm.pkg.github.com"
     },
     "scripts": {
-        "reset": "rm -rf .git",
+        "prereset": "rm -rf .git",
+        "reset": "git init",
+        "postreset": "npm i --save-dev husky",
         "prebuild": "rm -rf dist",
         "build": "tsc -p tsconfig.build.json",
         "build:release": "npm run package:release",
