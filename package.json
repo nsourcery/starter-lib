@@ -24,7 +24,7 @@
         "prepublish:release": "git push --follow-tags origin main",
         "publish:release": "npm publish dist",
         "prereset": "rm -rf .git",
-        "reset": "git init",
+        "reset": "git init && git checkout -b main",
         "postreset": "npm i --save-dev husky"
     },
     "dependencies": {
